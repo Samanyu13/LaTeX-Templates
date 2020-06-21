@@ -1,0 +1,35 @@
+\section{Lexical Analyser}
+
+\subsection{Aim}
+Design and Implement a lexical analyzer for given language using C and the lexical analyzer should ignore redundant spaces, tabs and new line.
+
+\subsection{Theory}
+    The very first phase of a compiler deals with lexical analysis. A lexical analyzer, also known as scanner, converts the high level input program into a sequence of \textbf{tokens}.  A lexical token is a sequence of characters which is treated as a unit in the grammar of the programming languages.    The common type of tokens include:   \\
+    \begin{itemize}
+        \item \textbf{Keywords}: A keyword is a word reserved by a programming language having a special meaning. 
+        \item \textbf{Identifiers}: It is a user-defined name used to uniquely identify a program element. It can be a  class, method, variable, namespace etc.
+        \item \textbf{Operators}: It is a symbol that tells the compiler or interpreter to perform specific mathematical, relational or logical operation and produce final result. 
+        \item \textbf{Separators}: Separators are used to separate one programming element from the other.
+        \item \textbf{Literals}: A literal is a notation for representing a fixed value and do not change during the course of execution of the program.
+    \end{itemize}
+
+
+\subsection{Algorithm}
+    \begin{algorithm}[H]
+    % \renewcommand{\thealgorithm}{}
+    \lstinputlisting[language=c]{Algorithms/exp1.txt}
+    \caption{Algorithm for the Client}
+    \end{algorithm}
+    
+\subsection{Code}
+    \subsubsection*{Lexical Analyser - Code}
+        \lstinputlisting[language=c, numbers=none, breaklines=true]{Code/exp1.c}
+
+\subsection{Input and Output}
+    \subsubsection{Input}
+        \verbatiminput{Input/exp1.txt}
+    \subsubsection{Output}
+        \verbatiminput{Output/exp1.txt}
+
+\subsection{Result}
+Implemented the program for implemeting lexical analyser using C and was compiled using gcc version 5.4.0, and executed in ubuntu 16.04 with kernel and the above output was obtained.

@@ -1,0 +1,69 @@
+\def\baselinestretch{1}%
+\ifx\undefined\@newbaseline% NFSS not present; 2.09 or 2e
+\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
+ \else% NFSS (2.09) present
+  \@newbaseline%
+\fi%
+\vskip-\baselineskip
+
+\def\endsinglespace{\par}
+
+%  spacing, doublespace and onehalfspace all are meant to INCREASE the
+%  spacing (i.e. calling onehalfspace from within doublespace will not
+%  produce a graceful transition between spacings)
+%
+% Next two definitions fixed for consistency with TeX 3.x
+\def\spacing#1{\par%
+ \begingroup             % moved from \endspacing by PGBR 29-1-91
+ \def\baselinestretch{#1}%
+\ifx\undefined\@newbaseline% NFSS not present; 2.09 or 2e
+ \ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
+ \else% NFSS (2.09) present
+  \@newbaseline%
+\fi%
+}
+
+\def\endspacing{\par%
+ \vskip \parskip%
+ \vskip \baselineskip%
+ \endgroup%
+ \vskip -\parskip%
+ \vskip -\baselineskip}
+
+% one and a half spacing is 1.5 x pt size
+\def\onehalfspace{\ifcase \@ptsize \relax  % 10pt
+     \spacing{1.25}
+   \or % 11pt
+     \spacing{1.213}
+   \or % 12pt
+     \spacing{1.241}
+   \fi}
+\let\endonehalfspace=\endspacing
+
+% double spacing is 2 x pt size
+\def\doublespace{\ifcase \@ptsize \relax % 10pt
+    \spacing{1.667}
+  \or % 11pt
+    \spacing{1.618}
+  \or % 12pt
+    \spacing{1.655}
+  \fi}
+\let\enddoublespace=\endspacing
+
+% gt - EMSH chose to omit display math part that follows.
+% She wrote (see above) that the "altered spacing before and after displayed
+% equations ... just looked too much".
+%
+% Fix up spacing before and after displayed math
+% (arraystretch seems to do a fine job for inside LaTeX displayed math,
+% since array and eqnarray seem to be affected as expected).
+% Changing \baselinestretch and doing a font change also works if done here,
+% but then you have to change @setsize to remove the call to @nomath)
+%
+\everydisplay{
+  \abovedisplayskip \baselinestretch\abovedisplayskip%
+  \belowdisplayskip \abovedisplayskip%
+  \abovedisplayshortskip \baselinestretch\abovedisplayshortskip%
+  \belowdisplayshortskip \baselinestretch\belowdisplayshortskip}
+
+\endinput

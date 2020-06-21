@@ -1,0 +1,6 @@
+{
+	int a, b;
+	printf(a);
+	printf("Hey_Mr");
+	return 0;
+}

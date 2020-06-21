@@ -1,0 +1,15 @@
+START
+Get the input file and read from the file word by word.
+Split the word into meaningful tokens with the help of delimiters
+Read each token one by one
+    If token is a keyword
+        print <token, keyword>
+    If token is an operator
+        print <token, operator>
+    If token is a seperator/ delimiter
+        print <token, delimiter>
+    If token is a literal
+        print <token, literal>
+    If token is an identifier
+        print <token, identifier>
+STOP

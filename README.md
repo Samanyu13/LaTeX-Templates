@@ -1,5 +1,5 @@
 # LaTeX TEMPLATES
-A small set of LaTeX templates of some of my works. Hope someone will find it useful one day or the other. :)
+A small set of LaTeX templates of some of my works.
 
 
 ### Folder Structure
